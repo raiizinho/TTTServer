@@ -13,7 +13,7 @@ io.on("connection", (socket) => {
     });
 })
 app.get("/", (req, res) => {
-  res.send("Hello World!");
+  res.json({opa: "amigo"});
 });
 
 app.listen(25508, "0.0.0.0", () => {
