@@ -8,7 +8,7 @@ import mongoose from "mongoose";
 import dotenv from "dotenv";
 dotenv.config();
 mongoose.connect(process.env.URI_MONGODB).then((c) => {
-    console.log("Conectado ao banco de dados");
+    console.log(colors.green("Conectado ao banco de dados"));
 })
 
 import loginRouter from "./routes/login/index.js";
@@ -25,7 +25,7 @@ app.use((req, res, next) => {
 })
 
 // middleware
-app.use(express.json())
+app.use(e.json())
 app.set("json spaces", 4)
 
 // Rotas 
