@@ -41,7 +41,7 @@ app.use(cors({
 const server = http.createServer(app);
 
 // Configuração CORS para Socket.IO
-const io = new Server(server, {
+export const io = new Server(server, {
     cors: {
         origin: "*",
         methods: ["GET", "POST"]
