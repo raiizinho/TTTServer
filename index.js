@@ -28,10 +28,6 @@ app.use((req, res, next) => {
 app.use(e.json())
 app.set("json spaces", 4)
 
-// Rotas 
-app.use("/login", loginRouter); // login route
-app.use("/api", loginRouter(io)); // api route
-
 // Configuração CORS para Express
 app.use(cors({
     origin: "*",
@@ -39,7 +35,6 @@ app.use(cors({
 }));
 
 const server = http.createServer(app);
-
 // Configuração CORS para Socket.IO
 export const io = new Server(server, {
     cors: {
@@ -47,6 +42,11 @@ export const io = new Server(server, {
         methods: ["GET", "POST"]
     }
 });
+
+// Rotas 
+app.use("/login", loginRouter); // login route
+app.use("/api", loginRouter(io)); // api route
+
 
 io.on("connection", (socket) => {
     console.log("Usuário conectado", socket.id);
