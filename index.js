@@ -30,7 +30,7 @@ app.set("json spaces", 4)
 
 // Rotas 
 app.use("/login", loginRouter); // login route
-app.use("/api", loginRouter); // api route
+app.use("/api", loginRouter(io)); // api route
 
 // Configuração CORS para Express
 app.use(cors({
@@ -55,8 +55,6 @@ io.on("connection", (socket) => {
         console.log("Usuário desconectado", socket.id);
     });
 });
-
-
 
 app.get("/", (req, res) => {
     res.json({ opa: "amigo" });

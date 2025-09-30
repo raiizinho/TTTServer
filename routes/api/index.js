@@ -1,5 +1,6 @@
 import e from "express";
 import { io } from "../../index.js";
+export async function loginRouter() {
 
 const router = e.Router();
 
@@ -9,5 +10,4 @@ router.get("/login", (req, res) => {
 });
 
 
-
-export default router;
+}
