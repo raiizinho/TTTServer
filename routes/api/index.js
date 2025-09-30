@@ -1,7 +1,6 @@
 import e from "express";
 import { io } from "../../index.js";
 export async function loginRouter() {
-
 const router = e.Router();
 
 router.get("/login", (req, res) => {
@@ -9,5 +8,5 @@ router.get("/login", (req, res) => {
     res.json({ message: "Rota de api aq" });
 });
 
-
+return router
 }
